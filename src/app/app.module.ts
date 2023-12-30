@@ -11,6 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { ShirtsComponent } from './pages/public/shirts/shirts.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { PhantsComponent } from './pages/public/phants/phants.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,14 +22,18 @@ import { HeaderComponent } from './layout/header/header.component';
     LoginComponent,
     HomeComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShirtsComponent,
+    PhantsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModules,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
+    FormsModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

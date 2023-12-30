@@ -1,0 +1,22 @@
+.filter-row {
+    display: flex;
+    align-items: flex-start;
+    top: 10px;
+  }
+  
+  aside {
+    max-width: 250px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 68px;
+    height: 100vh;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .05);
+    overflow-y: auto;
+  }
+  
+  .content-scroll {
+    top: 150px;
+    position: relative; /* Change position to relative */
+    overflow-y: auto; /* Add this line to allow the content to scroll */
+  }
+  

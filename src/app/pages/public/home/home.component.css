@@ -1,77 +1,85 @@
 .carousel-container {
-    position: relative;
-    text-align: center;
-
+  position: relative;
+  text-align: center;
 }
 
 .carousel-container img {
-    display: none;
-    width: 100%;
+  display: none;
+  width: 100%;
 }
 
 .carousel-container .image-active {
-    display: block;
-    height: 91vh;
+  display: block;
+  height: 91vh;
 }
 
 .carousel-dot-container {
-    position: absolute;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin-bottom: 1rem;
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 1rem;
 }
 
 .dot {
-    cursor: pointer;
-    height: 10px;
-    width: 10px;
-    margin: -25px 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: inline-block;
-    transition: 0.6s ease;
-    opacity: 0.5;
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: -25px 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: inline-block;
+  transition: 0.6s ease;
+  opacity: 0.5;
 }
 
 .active,
 .dot:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
-img {
-    height: 91vh;
+.image {
+  height: 100vh;
 }
-
-/* .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 2;
-    }
-
-} */
 
 .carousel-indicators li {
-    height: 13px;
-    width: 13px;
-    margin: 0 10px;
-    border-radius: 50%;
-    background-color: transparent; /* Makes the circles transparent */
-    border: 1px solid white; /* Adds a white border around the circles (optional) */
-  }
+  height: 10px;
+  width: 10px;
+  margin: 0 20px;
+  border-radius: 50%;
+  background-color: transparent; /* Makes the circles transparent */
+  border: 1px solid white; /* Adds a white border around the circles (optional) */
+}
 
-  .carousel-indicators li.active{
-    background-color:#fff
-  }
-  
+.carousel-indicators li.active {
+  background-color: #fff;
+}
+
+.circle {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: black;
+  border: 1px solid rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+.row {
+  margin: 20px;
+}
+
+.category-heading{
+    text-align: center;
+    font: 40px KumbhSans-700;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.heading{
+  font:36px jost, sans-serif;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}

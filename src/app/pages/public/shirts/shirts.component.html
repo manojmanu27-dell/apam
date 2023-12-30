@@ -1,0 +1,61 @@
+<div class="container-full">
+  <div class="row">
+    <div class="d-none d-md-block col-lg-3 col-md-3">
+      <aside>
+        <div class="navigation">
+          Home / <span class="current-loc">Shirts</span>
+        </div>
+        <div class="filter">
+          <h4>FILTERS</h4>
+          <mat-checkbox class="example-margin col-12" color="primary">
+            <span class="label">Chineese Collar</span>
+          </mat-checkbox>
+          <mat-checkbox class="example-margin col-12" color="primary">
+            <span class="label">Checks</span>
+          </mat-checkbox>
+          <mat-checkbox class="example-margin col-12" color="primary">
+            <span class="label">Plain</span>
+          </mat-checkbox>
+        </div>
+      </aside>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+      <div class="sort d-none d-md-block">
+          <label>Sort By : &nbsp;</label>
+          <select mat-select class="sort-dropdown" [(ngModel)]="selected" name="sort" (change)="sortBy()">
+            <option value="recommended" selected>Recommended</option>
+            <option value="New Arrivals">New Arrivals</option>
+            <option value="lowToHigh">Price: Low to High</option>
+            <option value="highToLow">Price: High to Low</option>
+          </select>
+      </div>
+      <div class="products row">
+        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
+          <div class="card">
+            <img src="../../../../assets/images/tshirt.jpg" alt="T Shirts">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
+          <div class="card">
+            <img src="../../../../assets/images/tshirt.jpg" alt="T Shirts">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
+          <div class="card">
+            <img src="../../../../assets/images/tshirt.jpg" alt="T Shirts">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+          <div class="card">
+            <img src="../../../../assets/images/tshirt.jpg" alt="T Shirts">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+          <div class="card">
+            <img src="../../../../assets/images/tshirt.jpg" alt="T Shirts">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

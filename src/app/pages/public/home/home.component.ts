@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +6,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
 
   selectedIndex: number = 0;
   arr: any;
@@ -43,6 +43,6 @@ export class HomeComponent implements OnInit {
 
   selectedImage(index: number) {
     this.selectedIndex = index;
-    console.log("the selectedIndex is",this.selectedIndex)
+    console.log("the selectedIndex is", this.selectedIndex)
   }
 }
