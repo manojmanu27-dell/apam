@@ -55,7 +55,6 @@ select {
     width: 210px;
     height: 280px;
     object-fit: cover;
-    /* Ensure image fills the container */
 }
 
 .card-desktop-view {
@@ -136,9 +135,7 @@ select {
 .card-desktop-view:hover .wishlist-icon {
     transform: translateY(14px) translateX(-17px);
     opacity: 0;
-    /* Fade out the icon */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out 0.2s;
-    /* Delay opacity by 0.2 seconds */
 }
 
 @keyframes showHeart {
@@ -154,7 +151,6 @@ select {
 }
 
 .wishlist-appear {
-    /* No inline styles needed, animation defined in @keyframes */
     opacity: 0;
 }
 
