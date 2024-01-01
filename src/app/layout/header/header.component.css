@@ -14,7 +14,7 @@
   padding: 10px;
   background: #ffffff;
   color: #000000;
-  box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
 }
 
 .header {
@@ -35,6 +35,7 @@
 
 .input-search i {
   position: absolute;
+  margin-top: 3px;
 }
 
 .search-product {
@@ -48,19 +49,22 @@
   font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
-.profile{
+.profile {
   padding: 5px 20px 2px 20px;
-  
+
 }
-.bag{
+
+.bag {
   padding: 5px 20px 2px 2px;
 }
 
-svg{
+svg {
   cursor: pointer;
 }
 
-@media (max-width: 767px) { /* Target mobile screens */
+@media (max-width: 767px) {
+
+  /* Target mobile screens */
   .search-product {
     display: none;
   }
