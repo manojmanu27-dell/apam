@@ -15,6 +15,7 @@ import { ShirtsComponent } from './pages/public/shirts/shirts.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PhantsComponent } from './pages/public/phants/phants.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     SidebarComponent,
     HeaderComponent,
     ShirtsComponent,
-    PhantsComponent
+    PhantsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
