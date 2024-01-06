@@ -19,8 +19,8 @@ export class PhantsComponent {
       discountedPrice: 999,
       strikePrice: 1999,
       discountPercentage: 1000,
-      image1: '../../../../assets/images/category/Shirts/Shirt1.webp',
-      image2: '../../../../assets/images/category/Shirts/Shirt2.webp',
+      image1: './assets/images/category/Shirts/Shirt1.webp',
+      image2: './assets/images/category/Shirts/Shirt2.webp',
       showNotch: false,
       addedToBag: false
     }
@@ -29,8 +29,8 @@ export class PhantsComponent {
       discountedPrice: 999,
       strikePrice: 1999,
       discountPercentage: 1000,
-      image1: '../../../../assets/images/category/Shirts/Shirt1.webp',
-      image2: '../../../../assets/images/category/Shirts/Shirt2.webp',
+      image1: './assets/images/category/Shirts/Shirt1.webp',
+      image2: './assets/images/category/Shirts/Shirt2.webp',
       showNotch: false,
       addedToBag: false
     }
