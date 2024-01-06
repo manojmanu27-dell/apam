@@ -1,22 +1,73 @@
-.filter-row {
-    display: flex;
-    align-items: flex-start;
-    top: 10px;
+.sticky-aside {
+  position: sticky;
+  top: 68px;
+  height: 100vh;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .05);
+  overflow-y: auto;
+}
+
+.card:hover {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.card {
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: none;
+  margin: 0;
+}
+
+.card-footer {
+  background: #fff;
+}
+
+.card-body .defaultImage {
+  opacity: 1;
+  display: block;
+  transition: opacity 1s ease-in-out;
+}
+
+.card-body .hoverImage {
+  opacity: 0;
+  display: none;
+}
+
+.card:hover .card-body .defaultImage {
+  opacity: 0;
+  display: none;
+}
+
+.card:hover .card-body .hoverImage {
+  opacity: 1;
+  display: block;
+}
+
+.buttons-for-mob-view {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+}
+
+.product-column {
+  padding: 0;
+}
+
+.bag-button {
+  margin: 0;
+  width: 100%;
+  padding: 0 0 2px 0;
+}
+
+.fa-circle-notch {
+  animation: animate-load 1s ease infinite;
+}
+
+@keyframes animate-load {
+  0% {
+    transform: rotate(0turn);
   }
-  
-  aside {
-    max-width: 250px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 68px;
-    height: 100vh;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .05);
-    overflow-y: auto;
+
+  100% {
+    transform: rotate(1turn);
   }
-  
-  .content-scroll {
-    top: 150px;
-    position: relative; /* Change position to relative */
-    overflow-y: auto; /* Add this line to allow the content to scroll */
-  }
-  
+}

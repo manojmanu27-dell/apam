@@ -1,0 +1,12 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-12">
+            <mat-radio-group [(ngModel)]="sortOrder" (ngModelChange)="setSortOrder()">
+                <mat-radio-button color="primary" value="Recommended"><span class="label">Recommended</span></mat-radio-button>
+                <mat-radio-button color="primary" value="New Arrivals"><span class="label">New Arrivals</span></mat-radio-button>
+                <mat-radio-button color="primary" value="lowToHigh"><span class="label">Price: Low to High</span></mat-radio-button>
+                <mat-radio-button color="primary" value="highToLow"><span class="label">Price: High to Low</span></mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</div>

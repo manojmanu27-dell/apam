@@ -1,106 +1,78 @@
 <div class="container-fluid">
-    <div class="filter-row">
-      <aside class="d-none d-md-block col-lg-3 col-md-3">
-        <div class="navigation">
-          Home / <span class="current-loc">Shirts</span>
-        </div>
-        <hr>
-        <div class="filter">
-          <h4>FILTERS</h4>
-          <mat-checkbox class="example-margin col-12" color="primary">
-            <span class="label">Chineese Collar</span>
-          </mat-checkbox>
-          <mat-checkbox class="example-margin col-12" color="primary">
-            <span class="label">Checks</span>
-          </mat-checkbox>
-          <mat-checkbox class="example-margin col-12" color="primary">
-            <span class="label">Plain</span>
-          </mat-checkbox>
-        </div>
-        <div class="filter">
-          <h4>SORT</h4>
-          <mat-radio-button class="example-margin col-12" color="primary">
-            <span class="label">Low to High</span>
-          </mat-radio-button>
-          <mat-radio-button class="example-margin col-12" color="primary">
-            <span class="label">High to Low</span>
-          </mat-radio-button>
-          <mat-radio-button class="example-margin col-12" color="primary">
-            <span class="label">New Arrivals <small class="super-set">NEW</small></span>
-          </mat-radio-button>
-        </div>
-      </aside>
-      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-        <div class="container">
-          <div class="row shirts-view">
-            <div class="col-lg-3 col-md-10 col-sm-12 col-xs-12">
-              <div class="card">
-                <img src="../../../../assets/images/tshirt.jpg" alt="t shirt">
-                <div class="card-body">
-                  <div class="card-intro">
-                    <h3>Round Neck</h3>
-                  </div>
-                  <!-- <button class="button-5">Add to Cart</button> -->
-                </div>
+  <div class="row">
+    <aside class="d-none d-md-block col-lg-3 col-md-3 sticky-aside">
+      <div class="navigation">
+        Home / <span class="current-loc">Shirts</span>
+      </div>
+      <div class="filter">
+        <h4>FILTERS</h4>
+        <mat-checkbox class="example-margin col-12" color="primary">
+          <span class="label">Chineese Collar</span>
+        </mat-checkbox>
+        <mat-checkbox class="example-margin col-12" color="primary">
+          <span class="label">Checks</span>
+        </mat-checkbox>
+        <mat-checkbox class="example-margin col-12" color="primary">
+          <span class="label">Plain</span>
+        </mat-checkbox>
+      </div>
+    </aside>
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+      <div class="container p-2">
+        <div class="row shirts-view">
+          <div class="heading col-12">
+            <h4>Shirts: <small>200 Items</small></h4>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-column"
+            *ngFor="let product of shirtsCategory; let i=index">
+            <div class="card">
+              <div class="card-body p-0">
+                <img [src]="product.image1" alt="Phant" class="img-fluid defaultImage">
+                <img [src]="product.image2" alt="Phant" class="img-fluid hoverImage">
               </div>
-            </div>
-            <div class="col-lg-3 col-md-10 col-sm-12 col-xs-12">
-              <div class="card">
-                <img src="../../../../assets/images/tshirt.jpg" alt="t shirt">
-                <div class="card-body">
-                  <div class="card-intro">
-                    <h3>Round Neck</h3>
-                  </div>
-                  <!-- <button class="button-5">Add to Cart</button> -->
+              <div class="card-footer p-1">
+                <div class="product-name">
+                  <h4 class="mb-1">{{product.productName}}</h4>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-10 col-sm-12 col-xs-12">
-              <div class="card">
-                <img src="../../../../assets/images/tshirt.jpg" alt="t shirt">
-                <div class="card-body">
-                  <div class="card-intro">
-                    <h3>Round Neck</h3>
-                  </div>
-                  <!-- <button class="button-5">Add to Cart</button> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-10 col-sm-12 col-xs-12">
-              <div class="card">
-                <img src="../../../../assets/images/tshirt.jpg" alt="t shirt">
-                <div class="card-body">
-                  <div class="card-intro">
-                    <h3>Round Neck</h3>
-                  </div>
-                  <!-- <button class="button-5">Add to Cart</button> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-10 col-sm-12 col-xs-12">
-              <div class="card">
-                <img src="../../../../assets/images/tshirt.jpg" alt="t shirt">
-                <div class="card-body">
-                  <div class="card-intro">
-                    <h3>Round Neck</h3>
-                  </div>
-                  <!-- <button class="button-5">Add to Cart</button> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-10 col-sm-12 col-xs-12">
-              <div class="card">
-                <img src="../../../../assets/images/tshirt.jpg" alt="t shirt">
-                <div class="card-body">
-                  <div class="card-intro">
-                    <h3>Round Neck</h3>
-                  </div>
-                  <!-- <button class="button-5">Add to Cart</button> -->
-                </div>
+                <button mat-raised-button color="primary" class="bag-button" name="shirt{{i}}"
+                  (click)="handleAnimation(i)">
+                  <i *ngIf="product.showNotch" class="fa-solid fa-circle-notch"></i>
+                  <span *ngIf="!product.showNotch" class="btn-text"> <i class="fa-solid fa-bag-shopping"></i>
+                    {{product.addedToBag?'Added':'Add'}} to Bag</span>
+                </button>
               </div>
             </div>
           </div>
+
         </div>
       </div>
+    </div>
+    <div class="buttons-for-mob-view col-12 d-flex">
+      <button class="btn btn-pad btn-sort col-6" (click)="openSortPopup()">
+        <svg width="30px" height="30px" viewBox="-2.16 -2.16 28.32 28.32" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="M18 8L6 8M6 8L10.125 4M6 8L10.125 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path opacity="0.5" d="M6 16L18 16M18 16L13.875 12M18 16L13.875 20" stroke="#1C274C" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>Sort</button>
+      <hr>
+      <button class="btn btn-pad col-6"><svg width="30px" height="30px" viewBox="-4.08 -4.08 32.16 32.16" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path opacity="0.4"
+              d="M8.16 6.6499H15.83C16.47 6.6499 16.99 7.1699 16.99 7.8099V9.0899C16.99 9.5599 16.7 10.1399 16.41 10.4299L13.91 12.6399C13.56 12.9299 13.33 13.5099 13.33 13.9799V16.4799C13.33 16.8299 13.1 17.2899 12.81 17.4699L12 17.9799C11.24 18.4499 10.2 17.9199 10.2 16.9899V13.9099C10.2 13.4999 9.97 12.9799 9.73 12.6899L7.52 10.3599C7.23 10.0799 7 9.5499 7 9.1999V7.8699C7 7.1699 7.52 6.6499 8.16 6.6499Z"
+              stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#292D32"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>Filter</button>
     </div>
   </div>

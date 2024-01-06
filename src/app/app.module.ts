@@ -16,6 +16,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { PhantsComponent } from './pages/public/phants/phants.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SortPopupComponent } from './pages/public/sort-popup/sort-popup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     HeaderComponent,
     ShirtsComponent,
     PhantsComponent,
-    FooterComponent
+    FooterComponent,
+    SortPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
