@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SortPopupComponent } from './pages/public/sort-popup/sort-popup.component';
+import { ProductComponent } from './pages/public/product/product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SortPopupComponent } from './pages/public/sort-popup/sort-popup.compone
     ShirtsComponent,
     PhantsComponent,
     FooterComponent,
-    SortPopupComponent
+    SortPopupComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

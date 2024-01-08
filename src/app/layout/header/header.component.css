@@ -69,3 +69,8 @@ svg {
     display: none;
   }
 }
+
+.display-center {
+  display: flex;
+  margin: -21px 0 0 11px;
+}

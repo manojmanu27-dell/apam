@@ -1,3 +1,5 @@
+import { SharedService } from 'src/app/services/shared.service';
+import { Observable } from 'rxjs';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,9 +14,12 @@ export class HeaderComponent {
     this.scroll = window.scrollY;
     console.log('window is scrolled down by', scroll);
   }
-
-  constructor(public route: Router) {
-    console.log("the route is ",route.url)
+  bagLength: Number = 0;
+  constructor(public route: Router, public sharedService:SharedService) {
+    console.log("the route is ", route.url)
+    this.sharedService.bagLength = localStorage.length; 
+    console.log("the length is",typeof(this.sharedService.bagLength))
+    
   }
   scroll: number = 0;
 }

@@ -26,7 +26,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-column"
             *ngFor="let product of shirtsCategory; let i=index">
             <div class="card">
-              <div class="card-body p-0">
+              <div class="card-body p-0" (click)="openProduct(product)">
                 <img [src]="product.image1" alt="Phant" class="img-fluid defaultImage">
                 <img [src]="product.image2" alt="Phant" class="img-fluid hoverImage">
               </div>
@@ -35,7 +35,7 @@
                   <h4 class="mb-1">{{product.productName}}</h4>
                 </div>
                 <button mat-raised-button color="primary" class="bag-button" name="shirt{{i}}"
-                  (click)="handleAnimation(i)">
+                  (click)="addToBagLocal(i)">
                   <i *ngIf="product.showNotch" class="fa-solid fa-circle-notch"></i>
                   <span *ngIf="!product.showNotch" class="btn-text"> <i class="fa-solid fa-bag-shopping"></i>
                     {{product.addedToBag?'Added':'Add'}} to Bag</span>
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="buttons-for-mob-view col-12 d-flex">
+    <div class="buttons-for-mob-view col-12 ">
       <button class="btn btn-pad btn-sort col-6" (click)="openSortPopup()">
         <svg width="30px" height="30px" viewBox="-2.16 -2.16 28.32 28.32" fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
           </g>
         </svg>Sort</button>
       <hr>
-      <button class="btn btn-pad col-6"><svg width="30px" height="30px" viewBox="-4.08 -4.08 32.16 32.16" fill="none"
+      <button class="btn btn-pad col-6" (click)="openFilterPopup()"><svg width="30px" height="30px" viewBox="-4.08 -4.08 32.16 32.16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class SharedService {
   public login!: string;
   public loading!: boolean;
+  public bagLength: any;
   constructor(private spinner: NgxSpinnerService) {}
 
   showSpinner(): void {

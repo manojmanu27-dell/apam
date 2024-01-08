@@ -46,6 +46,7 @@
   position: sticky;
   bottom: 0;
   background: #fff;
+  display: none;
 }
 
 .product-column {
@@ -69,5 +70,11 @@
 
   100% {
     transform: rotate(1turn);
+  }
+}
+
+@media screen and (max-width:900px) {
+  .buttons-for-mob-view{
+    display: flex;
   }
 }
