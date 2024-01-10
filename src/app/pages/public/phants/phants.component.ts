@@ -14,12 +14,14 @@ export class PhantsComponent {
   shirtsCategory: any;
   showNotch: boolean = false;
   addedToBag: boolean = false;
-  constructor(private dialog: MatDialog, private sharedService: SharedService, private route: Router) { }
+  sortOderType: string = 'Recommended';
+
+  constructor(private dialog: MatDialog, public sharedService: SharedService, private route: Router) { }
 
   ngOnInit() {
-
+    console.log("the local storage is ", this.sharedService.bagItems)
     let obj = {
-      id: 1,
+      id: 45,
       productName: 'Casual Mens shirt',
       discountedPrice: 999,
       strikePrice: 1999,
@@ -30,7 +32,7 @@ export class PhantsComponent {
       addedToBag: false
     }
     let obj1 = {
-      id: 2,
+      id: 254,
       productName: 'Casual M2ens shirt',
       discountedPrice: 999,
       strikePrice: 1999,
@@ -41,7 +43,7 @@ export class PhantsComponent {
       addedToBag: false
     }
     this.shirtsCategory = [obj, obj1, {
-      id: 3,
+      id: 453,
       productName: 'Casual M2ens shirt',
       discountedPrice: 999,
       strikePrice: 1999,
@@ -50,7 +52,17 @@ export class PhantsComponent {
       image2: './assets/images/category/Shirts/Shirt2.webp',
       showNotch: false,
       addedToBag: false
-    }]
+    }, {
+        id: 45334,
+        productName: 'Casual M2ens shirt',
+        discountedPrice: 999,
+        strikePrice: 1999,
+        discountPercentage: 1000,
+        image1: './assets/images/category/Shirts/Shirt1.webp',
+        image2: './assets/images/category/Shirts/Shirt2.webp',
+        showNotch: false,
+        addedToBag: false
+      }]
   }
 
   addToBagLocal(index: number) {
@@ -58,25 +70,28 @@ export class PhantsComponent {
     setTimeout(() => {
       this.shirtsCategory[index].showNotch = !this.shirtsCategory[index].showNotch;
     }, 500)
-    this.shirtsCategory[index].addedToBag = !this.shirtsCategory[index].addedToBag;
-    if (localStorage.getItem(this.shirtsCategory[index].id)) {
+    if (this.sharedService.getItem(this.shirtsCategory[index].id)) {
       console.log("Item is present", localStorage.getItem(this.shirtsCategory[index].id))
-      localStorage.removeItem(this.shirtsCategory[index].id)
+      this.sharedService.removeItem(this.shirtsCategory[index].id)
     } else {
-      console.log('item is not present', localStorage.getItem(this.shirtsCategory[index].id))
-      localStorage.setItem(this.shirtsCategory[index].id, this.shirtsCategory[index].id)
+      this.sharedService.setItem(this.shirtsCategory[index].id, this.shirtsCategory[index].id)
     }
-    this.sharedService.bagLength = localStorage.length;
-
     console.log("the length of local storage is", localStorage.length)
 
   }
 
 
   openSortPopup() {
-    this.dialog.open(SortPopupComponent, {
+    const dialog = this.dialog.open(SortPopupComponent, {
       width: '265px',
-      height: '185px'
+      height: '185px',
+      data: {
+        type: this.sortOderType
+      }
+    })
+    dialog.afterClosed().subscribe((value) => {
+      console.log("the value is", value)
+      this.sortOderType = value;
     })
   }
 

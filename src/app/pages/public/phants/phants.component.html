@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <aside class="d-none d-md-block col-lg-3 col-md-3 sticky-aside">
+    <aside class="d-none d-md-block col-lg-2 col-md-3 sticky-aside">
       <div class="navigation">
         Home / <span class="current-loc">Shirts</span>
       </div>
@@ -17,7 +17,7 @@
         </mat-checkbox>
       </div>
     </aside>
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12">
       <div class="container p-2">
         <div class="row shirts-view">
           <div class="heading col-12">
@@ -38,7 +38,7 @@
                   (click)="addToBagLocal(i)">
                   <i *ngIf="product.showNotch" class="fa-solid fa-circle-notch"></i>
                   <span *ngIf="!product.showNotch" class="btn-text"> <i class="fa-solid fa-bag-shopping"></i>
-                    {{product.addedToBag?'Added':'Add'}} to Bag</span>
+                    {{sharedService.bagItems[product.id]?'Added':'Add'}} to Bag</span>
                 </button>
               </div>
             </div>
