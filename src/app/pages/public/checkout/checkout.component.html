@@ -1,0 +1,74 @@
+<section class="container">
+    <div class="cart-items" *ngIf="sharedService.bagItems.length !== 0">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="col-12">
+                    <div class="row list-header">
+                        <div class="product">
+                            Product
+                        </div>
+                    </div>
+                </div>
+                <div class="card" *ngFor="let obj of items">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="img-passport">
+                                <img [src]="obj.image1" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <h3 class="p-0">{{obj.productName}}</h3>
+                            <div class="row justify-content-space-evenly">
+                                <div class="size">
+                                    <h5 class="p-0">Size: M </h5>
+                                </div>
+                                <div class="quantity row">
+                                    <h5 class="qty-header">Qty: </h5>
+                                    <button mat-stroked-button class="qty-sub">-</button>
+                                    <input type="text" class="input-number" value="1">
+                                    <button mat-stroked-button class="qty-add">+</button>
+                                    <!-- <select class="select-size">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select> -->
+                                </div>
+                            </div>
+                            <div class="price">
+                                price: {{obj.discountedPrice}}
+                            </div>
+                            <div class="footer-btn">
+                                <div class="row">
+                                    <button mat-stroked-button class="remove-btn">
+                                        <img src="./assets/icons/remove-icon.svg" alt="Remove from cart">
+                                        Remove</button>
+                                    <button mat-stroked-button class="move-to-wishlist">
+                                        <img src="./assets/icons/wishlist-icon.svg" alt="Move To Wishlist">
+                                        Wishlist</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 d-md-block d-none col-md-4 col-sm-12">
+                prie
+            </div>
+            <div class="col-12 d-md-none row sticky-bottom">
+                <div class="cart-value">
+                    Total:- ₹1799
+                </div>
+                <button mat-raised-button color="primary">Proceed to Pay <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="no-items text-center" *ngIf="sharedService.bagItems.length === 0">
+        <div class="col-12">
+            No Items are present in the bag please add items to your bag
+        </div>
+        <div class="col-12 mb-4 mt-2">
+            <button mat-raised-button color="primary">Go To Home</button>
+        </div>
+    </div>
+</section>

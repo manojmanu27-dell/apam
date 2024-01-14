@@ -22,4 +22,9 @@ export class HeaderComponent {
     
   }
   scroll: number = 0;
+
+  sidebarOpen(){
+    this.sharedService.sidebarHide = false;
+    console.log("the serviceis called",this.sharedService.sidebarHide)
+  }
 }

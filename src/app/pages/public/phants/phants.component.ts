@@ -66,17 +66,19 @@ export class PhantsComponent {
   }
 
   addToBagLocal(index: number) {
+    let a = this.sharedService.getItem(this.shirtsCategory[index].id);
+    console.log("Item is present", this.sharedService.bagItems)
+
     this.shirtsCategory[index].showNotch = !this.shirtsCategory[index].showNotch;
     setTimeout(() => {
       this.shirtsCategory[index].showNotch = !this.shirtsCategory[index].showNotch;
     }, 500)
     if (this.sharedService.getItem(this.shirtsCategory[index].id)) {
-      console.log("Item is present", localStorage.getItem(this.shirtsCategory[index].id))
       this.sharedService.removeItem(this.shirtsCategory[index].id)
     } else {
-      this.sharedService.setItem(this.shirtsCategory[index].id, this.shirtsCategory[index].id)
+      this.sharedService.setItem(this.shirtsCategory[index].id, JSON.stringify(this.shirtsCategory[index]))
     }
-    console.log("the length of local storage is", localStorage.length)
+    console.log("the length of local storage is", localStorage.length,this.shirtsCategory[index])
 
   }
 

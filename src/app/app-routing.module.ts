@@ -8,6 +8,7 @@ import { ShirtsComponent } from './pages/public/shirts/shirts.component';
 import { TShirtsComponent } from './pages/public/t-shirts/t-shirts.component';
 import { PhantsComponent } from './pages/public/phants/phants.component';
 import { ProductComponent } from './pages/public/product/product.component';
+import { CheckoutComponent } from './pages/public/checkout/checkout.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 't-shirts', component: TShirtsComponent },
   { path: 'phants', component: PhantsComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'check-out', component: CheckoutComponent },
 ];
 
 @NgModule({

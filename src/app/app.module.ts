@@ -19,6 +19,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SortPopupComponent } from './pages/public/sort-popup/sort-popup.component';
 import { ProductComponent } from './pages/public/product/product.component';
+import { CheckoutComponent } from './pages/public/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductComponent } from './pages/public/product/product.component';
     PhantsComponent,
     FooterComponent,
     SortPopupComponent,
-    ProductComponent
+    ProductComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

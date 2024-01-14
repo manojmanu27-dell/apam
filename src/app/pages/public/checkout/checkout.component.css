@@ -1,0 +1,90 @@
+.container {
+    margin-top: 10px;
+}
+
+.img-passport {
+    padding: 3px;
+}
+
+.img-fluid {
+    height: 100px;
+}
+
+.card .row .col-3 {
+    max-width: 13%;
+}
+
+@media screen and (max-width:750px) {
+    .card .row .col-3 {
+        max-width: 25%;
+    }
+}
+
+.p-0 {
+    margin: 0 !important;
+}
+
+.col-9 .row .select-size {
+    height: 20px;
+}
+
+
+
+.sticky-bottom {
+    bottom: 0;
+    position: sticky;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
+}
+
+.list-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-header .price {
+    margin-right: 25px;
+}
+
+.col-9 .quantity {
+    /* padding: 5px 7px; */
+    padding: 0 8px;
+}
+
+
+.qty-add,
+.qty-sub {
+    padding: 0;
+    min-width: 20px;
+    height: 22px;
+    margin: 0 2px;
+}
+
+.quantity .input-number {
+    width: 30px;
+    height: 22px;
+    text-align: center;
+}
+
+.quantity .qty-header {
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+
+.remove-btn,
+.move-to-wishlist {
+    height: 25px;
+}
+
+.footer-btn {
+    margin-bottom: 5px;
+}
+
+.footer-btn .row {
+    justify-content: space-evenly;
+}
+
+.row .size{
+    margin-left: 9px;
+}
