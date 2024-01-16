@@ -9,10 +9,10 @@ import { Component, HostListener } from '@angular/core';
 export class SidebarComponent {
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: MouseEvent) {
-    if(!this.sharedService.sidebarHide){
+    // if(!this.sharedService.sidebarHide){
 
-      this.sharedService.sidebarHide = true;
-    }
+    //   this.sharedService.sidebarHide = true;
+    // }
     console.log("the event s",event,this.sharedService.sidebarHide);
     // Same logic as in the previous example
   }

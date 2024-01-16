@@ -75,3 +75,11 @@ svg {
   margin: -21px 0 0 11px;
   color: black;
 }
+
+.bar-svg{
+  width: 30px;
+}
+
+.navbar-right{
+  align-items: baseline;
+}

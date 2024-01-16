@@ -9,7 +9,7 @@ export class SharedService {
   public loading!: boolean;
   public bagLength: any;
   public bagItems: any;
-  public sidebarHide: Boolean = true;
+  public sidebarHide: Boolean = false;
   constructor(private spinner: NgxSpinnerService, private storage: StorageService) { 
     this.bagItems = this.storage.getItems();
     console.log("tghis s called")

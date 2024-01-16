@@ -24,7 +24,7 @@ export class HeaderComponent {
   scroll: number = 0;
 
   sidebarOpen(){
-    this.sharedService.sidebarHide = false;
+    this.sharedService.sidebarHide = !this.sharedService.sidebarHide;
     console.log("the serviceis called",this.sharedService.sidebarHide)
   }
 }

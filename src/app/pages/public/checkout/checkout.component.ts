@@ -19,4 +19,8 @@ export class CheckoutComponent implements OnInit {
     // this.items = this.sharedService.bagItems;
     console.log("The bag items are", this.items);
   }
+
+  selectSize(){
+    console.log("this is selected eventhough disabled")
+  }
 }

@@ -1,7 +1,7 @@
 <section class="container">
     <div class="cart-items" *ngIf="sharedService.bagItems.length !== 0">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="col-lg-7 col-md-7 col-sm-12">
                 <div class="col-12">
                     <div class="row list-header">
                         <div class="product">
@@ -17,10 +17,17 @@
                             </div>
                         </div>
                         <div class="col-9">
-                            <h3 class="p-0">{{obj.productName}}</h3>
+                            <div class="row header-product">
+                                <h3 class="p-0">{{obj.productName}}</h3>
+                                <img src="./assets/icons/remove-icon.svg" alt="">
+                            </div>
                             <div class="row justify-content-space-evenly">
                                 <div class="size">
-                                    <h5 class="p-0">Size: M </h5>
+                                    <h5 class="p-0">Size:
+                                        <select aria-readonly="true" (click)="selectSize()">
+                                            <option value="M" selected>M</option>
+                                        </select>
+                                    </h5>
                                 </div>
                                 <div class="quantity row">
                                     <h5 class="qty-header">Qty: </h5>
@@ -39,9 +46,9 @@
                             </div>
                             <div class="footer-btn">
                                 <div class="row">
-                                    <button mat-stroked-button class="remove-btn">
+                                    <!-- <button mat-stroked-button class="remove-btn">
                                         <img src="./assets/icons/remove-icon.svg" alt="Remove from cart">
-                                        Remove</button>
+                                        Remove</button> -->
                                     <button mat-stroked-button class="move-to-wishlist">
                                         <img src="./assets/icons/wishlist-icon.svg" alt="Move To Wishlist">
                                         Wishlist</button>
@@ -50,6 +57,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-1 d-md-block d-none">
+                <div class="vl"> l</div>
             </div>
             <div class="col-lg-4 d-md-block d-none col-md-4 col-sm-12">
                 prie
