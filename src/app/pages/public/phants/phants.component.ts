@@ -78,7 +78,7 @@ export class PhantsComponent {
     } else {
       this.sharedService.setItem(this.shirtsCategory[index].id, JSON.stringify(this.shirtsCategory[index]))
     }
-    console.log("the length of local storage is", localStorage.length,this.shirtsCategory[index])
+    console.log("the length of local storage is", localStorage.length, this.shirtsCategory[index])
 
   }
 
@@ -102,6 +102,7 @@ export class PhantsComponent {
   }
 
   openProduct(product: any) {
+    this.sharedService.productObj = product;
     this.route.navigateByUrl('/product')
   }
 }
