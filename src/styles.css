@@ -9,3 +9,7 @@ body {
 .cursor-pointer {
     cursor: pointer;
 }
+
+mat-icon{
+    cursor: pointer;
+}

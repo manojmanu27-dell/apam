@@ -1,68 +1,68 @@
 <section class="container">
     <div class="cart-items" *ngIf="sharedService.bagItems.length !== 0">
         <div class="row">
-            <div class="col-lg-7 col-md-7 col-sm-12">
+            <div class="col-lg-8 col-md-9 col-sm-12">
                 <div class="col-12">
                     <div class="row list-header">
                         <div class="product">
-                            Product
+                            Products
                         </div>
                     </div>
                 </div>
-                <div class="card" *ngFor="let obj of items">
-                    <div class="row">
-                        <div class="col-3">
+                <div class="row products-row">
+                    <div class="card col-lg-6 col-md-6 col-sm-12" *ngFor="let obj of items">
+                        <div class="row product-dtls">
                             <div class="img-passport">
                                 <img [src]="obj.image1" alt="" class="img-fluid">
                             </div>
-                        </div>
-                        <div class="col-9">
-                            <div class="row header-product">
-                                <h3 class="p-0">{{obj.productName}}</h3>
-                                <img src="./assets/icons/remove-icon.svg" alt="">
-                            </div>
-                            <div class="row justify-content-space-evenly">
-                                <div class="size">
-                                    <h5 class="p-0">Size:
-                                        <select aria-readonly="true" (click)="selectSize()">
-                                            <option value="M" selected>M</option>
-                                        </select>
-                                    </h5>
+                            <div class="product-info row">
+                                <div class="prouct-name">
+                                    <h4>{{obj.productName}}</h4>
+                                    <mat-icon class="close-icon" (click)="removeFromBag(obj.id)">highlight_off</mat-icon>
                                 </div>
-                                <div class="quantity row">
-                                    <h5 class="qty-header">Qty: </h5>
-                                    <button mat-stroked-button class="qty-sub">-</button>
-                                    <input type="text" class="input-number" value="1">
-                                    <button mat-stroked-button class="qty-add">+</button>
-                                    <!-- <select class="select-size">
-                                            <option value="1" selected>1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                        </select> -->
+                                <div class="product-price">
+                                    <h5>Price:</h5><span class="strike-off"><img src="./assets/icons/rupee-sign.svg" alt="rupee sign" class="rupee-sign">{{obj.strikePrice}}</span> {{obj.discountedPrice}}
                                 </div>
-                            </div>
-                            <div class="price">
-                                price: {{obj.discountedPrice}}
-                            </div>
-                            <div class="footer-btn">
-                                <div class="row">
-                                    <!-- <button mat-stroked-button class="remove-btn">
-                                        <img src="./assets/icons/remove-icon.svg" alt="Remove from cart">
-                                        Remove</button> -->
+                                <div class="product-modify">
+                                  
+                                    <div class="quantity-modify">
+                                        <h5 class="qty-header">Qty: </h5>
+                                        <button mat-stroked-button class="qty-sub">-</button>
+                                        <input type="text" class="input-number" value="1">
+                                        <button mat-stroked-button class="qty-add">+</button>
+                                    </div>
+                                    <div class="size">
+                                        <h5>Size:</h5>M
+                                    </div>
+                                </div>
+                                <div class="wishlist">
                                     <button mat-stroked-button class="move-to-wishlist">
                                         <img src="./assets/icons/wishlist-icon.svg" alt="Move To Wishlist">
                                         Wishlist</button>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
+
             </div>
-            <div class="col-1 d-md-block d-none">
-                <div class="vl"> l</div>
-            </div>
-            <div class="col-lg-4 d-md-block d-none col-md-4 col-sm-12">
-                prie
+            <div class="col-lg-4 d-md-block d-none col-md-3 col-sm-12 v-line">
+                Total Cart Value:
+                <div class="mrp content-corner">
+                    Mrp: <span>1000</span>
+                </div>
+                <div class="discount content-corner">
+                    Discount: <span>1000</span>
+                </div>
+                <div class="shipping content-corner">
+                    Courier Charges: <span>1000</span>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="total-value content-corner">
+                    <h3> Total Amount</h3> <span>1000</span>
+                </div>
             </div>
             <div class="col-12 d-md-none row sticky-bottom">
                 <div class="cart-value">

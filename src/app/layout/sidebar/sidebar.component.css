@@ -1,19 +1,60 @@
-.sidebar{
-    background: beige;
-    width: 250px;
+.sidebar {
+    background: #D8D8D8;
+    width: 150px;
     z-index: 1021;
     position: absolute;
     height: 100%;
-    top:0;
+    top: 0;
+    padding: 0;
 }
 
-.sidebar-overlay{
-    background-color: rgba(0,0,0,.1);
-    bottom: 0;
-    display: none;
-    left: 0;
-    position: fixed;
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    padding-block: 2rem;
+    margin-left: 3px;
+}
+
+.nav-list li {
+    padding: 10px;
+    border-radius: 100vw 0 0 100vw;
+}
+
+.nav-list li.active {
+    background: white;
+    color: black;
+    position: relative;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-list .active::before {
+    top: calc(var(--border-radius)*-1);
+    border-radius: 0 0 100vw 0;
+    box-shadow: 5px 5px 0 5px white;
+
+
+}
+
+.nav-list .active::after {
+    bottom: calc(var(--border-radius)*-1);
+    border-radius: 0 100vw 0 0;
+    box-shadow: 10px -10px 0 10px white;
+}
+
+.nav-list .active::after,
+.nav-list .active::before {
+    --border-radius: 15px;
+    content: '';
+    position: absolute;
+    width: var(--border-radius);
+    height: var(--border-radius);
     right: 0;
-    top: 0;
-    z-index: 1020;
+    background: #D8D8D8;
 }

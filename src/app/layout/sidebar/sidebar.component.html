@@ -1,19 +1,18 @@
 <!-- Main Sidebar Container -->
 
-<aside class="sidebar" [ngClass]="{'collapse':sharedService.sidebarHide}">
-    <div class="sidebar-overlay">
-    </div>
-
-        test
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus soluta cum quibusdam et. Nostrum, aliquid
-        ullam?
-        Asperiores vitae sunt, doloribus dolor nihil hic eveniet eaque illo nulla aspernatur totam, perferendis soluta
-        mollitia laborum eius cupiditate, quae praesentium cum molestiae ea inventore ut ipsa modi? Accusamus soluta sit
-        magnam quae fuga libero autem possimus voluptatum doloribus aspernatur non expedita accusantium quaerat nam
-        totam
-        quia est a quo impedit rem iusto dolore placeat, atque vero? Accusantium adipisci rerum eaque aliquam debitis
-        velit
-        autem. Debitis at natus placeat laudantium mollitia quibusdam omnis reiciendis unde! Eum iusto sit pariatur
-        voluptates eius rem cumque quas!
-        {{sharedService.sidebarHide}}
-    </aside>
+<aside class="sidebar" [ngClass]="{'collapse':sharedService.showSideBar}">
+    <ul class="nav-list">
+        <li [ngClass]="{'active':router.url.includes('home')}">
+            <a href="javascript:void(0)" routerLink="/home"><span>Home</span></a>
+        </li>
+        <li [ngClass]="{'active':router.url === '/shirts'}">
+            <a href="javascript:void(0)" routerLink="/shirts"><span>Shirts</span></a>
+        </li>
+        <li [ngClass]="{'active':router.url.includes('t-shirts')}">
+            <a href="javascript:void(0)" routerLink="/t-shirts"><span>T-Shirts</span></a>
+        </li>
+        <li [ngClass]="{'active':router.url.includes('phants')}">
+            <a href="javascript:void(0)" routerLink="/phants"><span>Phants</span></a>
+        </li>
+    </ul>
+</aside>

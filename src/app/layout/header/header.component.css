@@ -8,6 +8,11 @@
   opacity: 1;
 }
 
+.brand{
+  display: flex;
+  align-items: center;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
