@@ -1,5 +1,6 @@
 <section class="container">
-    <div class="cart-items" *ngIf="sharedService.bagItems.length !== 0">
+    <div class="cart-items" *ngIf="items.length !== 0">
+
         <div class="row">
             <div class="col-lg-8 col-md-9 col-sm-12">
                 <div class="col-12">
@@ -11,45 +12,196 @@
                 </div>
                 <div class="row products-row">
                     <div class="card col-lg-6 col-md-6 col-sm-12" *ngFor="let obj of items">
-                        <div class="row product-dtls">
-                            <div class="img-passport">
-                                <img [src]="obj.image1" alt="" class="img-fluid">
+                        <div class="product-container">
+                            <div class="product-image">
+                                <img [src]="obj.image1" [alt]="obj.alt" loading="lazy" class="image">
                             </div>
-                            <div class="product-info row">
-                                <div class="prouct-name">
-                                    <h4>{{obj.productName}}</h4>
-                                    <mat-icon class="close-icon" (click)="removeFromBag(obj.id)">highlight_off</mat-icon>
+                            <div class="product-details">
+                                <h3 class="product-heading">{{obj.productName}} </h3>
+                                <div class="close-icon">
+                                    <img src="./assets/icons/close-icon.svg" alt="close icon" loading="lazy"
+                                        class="close" [ngClass]="{'active':obj['closeAnimationActive']}"
+                                        (click)="removeFromBag(obj.id)">
                                 </div>
                                 <div class="product-price">
-                                    <h5>Price:</h5><span class="strike-off"><img src="./assets/icons/rupee-sign.svg" alt="rupee sign" class="rupee-sign">{{obj.strikePrice}}</span> {{obj.discountedPrice}}
+                                    <h5 class="price-name">Price:
+                                        <span class="strike-off" aria-disabled="true">
+                                            ₹{{obj.strikePrice}}</span>
+                                        <span class="discounted-percentage">₹{{obj.discountPercentage}}OFF</span>
+                                        <span class="discounted-price">₹{{obj.discountedPrice}}</span>
+                                    </h5>
                                 </div>
-                                <div class="product-modify">
-                                  
-                                    <div class="quantity-modify">
-                                        <h5 class="qty-header">Qty: </h5>
-                                        <button mat-stroked-button class="qty-sub">-</button>
-                                        <input type="text" class="input-number" value="1">
-                                        <button mat-stroked-button class="qty-add">+</button>
-                                    </div>
-                                    <div class="size">
-                                        <h5>Size:</h5>M
-                                    </div>
+                                <div class="product-size-qty">
+                                    <h5 class="qty">Quantity:
+                                        <span>
+                                            <select>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </span>
+                                    </h5>
+                                    <h5 class="size">Size: <span>M</span></h5>
+
                                 </div>
-                                <div class="wishlist">
-                                    <button mat-stroked-button class="move-to-wishlist">
-                                        <img src="./assets/icons/wishlist-icon.svg" alt="Move To Wishlist">
-                                        Wishlist</button>
+                                <div class="move-to-wishlist">
+                                    <button mat-raised-button class="wishlist">
+                                        <i class="fa-regular fa-heart"></i>&nbsp;Move to Wishlist
+                                    </button>
+                                    <!-- <img src="./assets/icons/wishlist-icon.svg" alt="wishlist icon" class="wishlist-svg"> -->
+                                    <!-- <i class="fa-regular fa-heart fa-flip fa-lg" style="color: #000000;"></i> -->
                                 </div>
                             </div>
                         </div>
 
-
+                    </div>
+                </div>
+                <div class="login-form" *ngIf="!sharedService.isUserLoggedIn">
+                    <div class="select-login">
+                        <mat-radio-group aria-label="Select an option" class="select-type" [(ngModel)]="loginType">
+                            <mat-radio-button value="signup" color="primary" class="create-acc">Create
+                                Account</mat-radio-button>
+                            <mat-radio-button value="login" color="primary" class="login-acc">Already Have an
+                                account</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="user-login row" *ngIf="loginType === 'login'">
+                        <div class="input-box col-lg-5 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Email Id</mat-label>
+                                <input matInput class="email-id" type="email" name="email" [(ngModel)]="emailId"
+                                    required>
+                                <mat-error>Enter valid email</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-5 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Password</mat-label>
+                                <input matInput class="password" type="password" name="pwd" [(ngModel)]="password"
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-2">
+                            <div class="btn-content">
+                                <button mat-raised-button color="primary" class="btn-login">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-signup row" *ngIf="loginType === 'signup'">
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>User Name</mat-label>
+                                <input matInput class="user-name" type="text" name="username" [(ngModel)]="userName"
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Mobile No</mat-label>
+                                <input matInput class="user-monile" type="text" name="userMobile" [(ngModel)]="mobileNo"
+                                    required>
+                                <mat-error>Enter valid Mobile No</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Email Id</mat-label>
+                                <input matInput class="email-id" type="email" name="email" [(ngModel)]="emailId"
+                                    required>
+                                <mat-error>Enter valid email</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box row col-lg-6 col-md-6 col-sm-12">
+                            <div class="get-otp" *ngIf="showSendOtp">
+                                <button mat-raised-button color="primary" class="otp-btn" (click)="getOtp()">Send
+                                    Otp</button>
+                            </div>
+                            <div class="col-6" *ngIf="!showSendOtp">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Enter Otp</mat-label>
+                                    <input matInput class="user-otp" type="text" name="otp" [(ngModel)]="userOtp"
+                                        required>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-6" *ngIf="!showSendOtp">
+                                <button *ngIf="!userOtp" mat-raised-button color="primary" class="otp-mng">Resend
+                                    Otp</button>
+                                <button *ngIf="userOtp" mat-raised-button color="primary" class="otp-mng">Submit
+                                    Otp</button>
+                            </div>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Password</mat-label>
+                                <input matInput class="password" type="password" name="pwd" [(ngModel)]="password"
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Confirm Password</mat-label>
+                                <input matInput class="password" type="password" name="pwdCnf" [(ngModel)]="cnfPassword"
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <div class="d-flex justify-content-end">
+                                <button mat-raised-button color="primary" class="signup-user">Signup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="shipping-info">
+                    <h2>Shipping Information</h2>
+                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Address</mat-label>
+                            <input matInput class="address" type="text" name="address" [(ngModel)]="doorNoOrStreetNo"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Colony/Street</mat-label>
+                            <input matInput class="colony" type="text" name="colony" [(ngModel)]="colonyOrStreet"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Landmark</mat-label>
+                            <input matInput class="landmark" type="text" name="nearByLocation" [(ngModel)]="landMark"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                         <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Pincode</mat-label>
+                            <input matInput class="pincode" type="text" name="Pincode" [(ngModel)]="pincode"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                         <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>city</mat-label>
+                            <input matInput class="city" type="text" name="City" [(ngModel)]="city"
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                         <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>State</mat-label>
+                            <input matInput class="state" type="text" name="State" [(ngModel)]="state"
+                                required>
+                        </mat-form-field>
                     </div>
                 </div>
 
             </div>
-            <div class="col-lg-4 d-md-block d-none col-md-3 col-sm-12 v-line">
-                Total Cart Value:
+            <div class="col-lg-4 col-md-3 col-sm-12 v-line">
+                <h3 class="heading-cart">Total Cart Value:</h3>
                 <div class="mrp content-corner">
                     Mrp: <span>1000</span>
                 </div>
@@ -64,7 +216,7 @@
                     <h3> Total Amount</h3> <span>1000</span>
                 </div>
             </div>
-            <div class="col-12 d-md-none row sticky-bottom">
+            <div class="col-12 d-md-none sticky-bottom p-0">
                 <div class="cart-value">
                     Total:- ₹1799
                 </div>
@@ -73,12 +225,13 @@
             </div>
         </div>
     </div>
-    <div class="no-items text-center" *ngIf="sharedService.bagItems.length === 0">
+    <div class="no-items text-center" *ngIf="items.length === 0">
         <div class="col-12">
             No Items are present in the bag please add items to your bag
         </div>
         <div class="col-12 mb-4 mt-2">
-            <button mat-raised-button color="primary">Go To Home</button>
+            <button mat-raised-button color="primary" routerLink="/home">Go To Home</button>
         </div>
     </div>
+
 </section>

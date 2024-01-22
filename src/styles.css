@@ -13,3 +13,7 @@ body {
 mat-icon{
     cursor: pointer;
 }
+
+label{
+    margin-bottom: 0 !important;
+}

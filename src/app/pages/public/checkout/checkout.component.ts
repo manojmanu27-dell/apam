@@ -8,6 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
   items: any[] = [];
+  loginType!: string;
+  emailId!: string;
+  password!: string;
+  cnfPassword!: string;
+  userOtp!: string;
+  userName!: string;
+  mobileNo!: string;
+  doorNoOrStreetNo!: string;
+  landMark!: string;
+  colonyOrStreet!: string;
+  pincode!: string;
+  city!: string;
+  state!: string;
+  showSendOtp:Boolean = true;
   constructor(public sharedService: SharedService) {
   }
 
@@ -15,9 +29,12 @@ export class CheckoutComponent implements OnInit {
     window.scrollTo(0, 0);
     this.items = Object.values(this.sharedService.bagItems)
     if (this.items.length > 0) {
-      this.items = this.items.map(obj => JSON.parse(obj))
+      this.items = this.items.map(obj => {
+        let b = JSON.parse(obj)
+        b['closeAnimationActive'] = false;
+        return b;
+      })
     }
-    // this.items = this.sharedService.bagItems;
     console.log("The bag items are", this.items);
   }
 
@@ -26,6 +43,25 @@ export class CheckoutComponent implements OnInit {
   }
 
   removeFromBag(id: any) {
-    this.sharedService.removeItem(id);
+    this.items = this.items.map((obj) => {
+      if (obj.id === id) {
+        obj['closeAnimationActive'] = true;
+      }
+      return obj
+    })
+    setTimeout(() => {
+      this.sharedService.removeItem(id);
+      this.items = Object.values(this.sharedService.bagItems)
+      if (this.items.length > 0) {
+        this.items = this.items.map(obj => JSON.parse(obj))
+      }
+    }, 1000)
+
+
   }
+
+  getOtp(){
+    this.showSendOtp = false;
+  }
+
 }

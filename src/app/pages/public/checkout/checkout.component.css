@@ -1,164 +1,151 @@
-.container {
-    margin-top: 10px;
-}
-
-.img-passport {
-    padding: 3px;
-}
-
-.img-fluid {
-    height: 100px;
-    min-width: 70px;
-}
-
-.card .row .col-3 {
-    max-width: 13%;
-}
-
-@media screen and (max-width:750px) {
-    .card .row .col-3 {
-        max-width: 25%;
-    }
-}
-
-.p-0 {
-    margin: 0 !important;
-}
-
-
 .sticky-bottom {
     bottom: 0;
     position: sticky;
     justify-content: space-around;
     align-items: center;
-    margin: 5px;
-}
-
-.list-header {
-    align-items: center;
-    justify-content: space-between;
-}
-
-.list-header .price {
-    margin-right: 25px;
-}
-
-.col-9 .quantity {
-    /* padding: 5px 7px; */
-    padding: 0 8px;
-}
-
-
-.qty-add,
-.qty-sub {
-    padding: 0;
-    min-width: 20px;
-    height: 22px;
-    margin: 0 2px;
-}
-
-.quantity .input-number {
-    width: 30px;
-    height: 22px;
-    text-align: center;
-}
-
-.quantity .qty-header {
-    padding-right: 5px;
-    margin-bottom: 5px;
-}
-
-.remove-btn,
-.move-to-wishlist {
-    height: 25px;
-}
-
-.footer-btn {
-    margin-bottom: 5px;
-}
-
-.footer-btn .row {
-    justify-content: space-evenly;
-}
-
-
-
-.v-line {
-    border-left: 2px solid #D8D8D8;
-    height: 90%;
-}
-
-.col-9 .header-product {
-    justify-content: space-between;
-}
-
-.content-corner {
+    background: white;
+    border-top: 1px solid #D8D8D8;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    padding-top: 5px !important;
 }
 
-.product-info {
-    padding: 5px
+.product-image .image {
+    width: 6vw;
+    border: 2px solid white;
 }
 
-.prouct-name {
-    justify-content: space-between;
-    width: 100%;
-    display: flex;
-    height: 24px;
-}
-
-.product-dtls {
+.card .product-container {
     display: grid;
-    grid-template-columns: 90px auto;
+    grid-template-columns: 100px auto;
 }
 
 .close-icon {
-    margin-right: 5px;
-}
-
-.product-price {
+    justify-content: flex-end;
     display: flex;
-    width: 100%;
+    top: 0;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
 }
 
-.product-modify {
-    display: grid;
-    grid-template-columns: auto 50px;
-    width: 100%;
-    left: 0;
+.close-icon .close {
+    width: 27px;
+    height: 27px;
 }
 
-.product-modify .size {
-    display: flex;
+.close-icon .active {
+    animation: close 1s;
 }
 
-.product-modify .quantity-modify {
-    display: flex;
+@keyframes close {
+    0% {
+        rotate: 0turn;
+    }
+
+    100% {
+        rotate: 1turn;
+    }
 }
 
-.product-modify .quantity-modify .input-number {
-    width: 25px;
-    height: 22px;
+/* For Small Devices */
+@media screen and (max-width:650px) {
+    .product-image .image {
+        width: 20vw !important;
+    }
+
+    .card .product-container {
+        display: grid;
+        grid-template-columns: 80px auto;
+    }
+
+    .btn-content .btn-login {
+        margin: 0 !important;
+    }
 }
 
-h5 {
+.products-row {
+    justify-content: center;
+    padding: 10px;
+}
+
+.product-heading {
+    height: 25px;
     margin: 0;
 }
 
-.wishlist {
+.price-name .discounted-percentage {
+    color: #d33030;
+    padding: 0 5px 0 5px;
+}
+
+.price-name .strike-off {
+    color: #D8D8D8;
+    text-decoration: line-through;
+}
+
+.product-size-qty {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-size-qty .size {
+    width: 50%;
+}
+
+.product-size-qty .qty {
+    width: 50%;
+}
+
+.product-size-qty h5 {
+    margin: 0;
+    padding: 0;
+}
+
+.price-name {
+    margin: 0;
+    padding: 0;
+}
+
+.move-to-wishlist .wishlist {
+    height: 27px;
+}
+
+.move-to-wishlist {
     display: flex;
     justify-content: center;
+    padding: 7px;
+}
+
+.content-corner {
+    line-height: 2;
+    justify-content: space-between;
+    padding: 0 10px;
+    display: flex;
+    font-weight: 100;
+    font-family: cursive;
+}
+
+.heading-cart {
+    padding: 0;
+    margin: 0;
+    font-family: cursive;
+}
+
+.select-type .create-acc {
+    margin-bottom: 0;
+}
+
+.w-100 {
     width: 100%;
 }
 
-.strike-off {
-    text-decoration: line-through;
-    color: red;
-    padding-right: 5px;
+.btn-content .btn-login,
+.otp-mng,
+.get-otp {
+    margin: 8px;
 }
 
-.rupee-sign {
-    width: 20px;
-    height: 20px;
+.input-box .get-otp {
+    margin-bottom: 22px;
 }

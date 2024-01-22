@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
     exports: [
         MatCheckboxModule,
@@ -14,7 +15,8 @@ import { MatDividerModule } from '@angular/material/divider';
         MatSelectModule,
         MatButtonModule,
         MatIconModule,
-        MatDividerModule
+        MatDividerModule,
+        MatInputModule
     ]
 })
 export class MaterialModules { }

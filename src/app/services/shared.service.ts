@@ -5,6 +5,7 @@ import { StorageService } from './storage.service';
   providedIn: 'root',
 })
 export class SharedService {
+  public isUserLoggedIn: Boolean = false;
   public login!: string;
   public loading!: boolean;
   public bagLength: any;
