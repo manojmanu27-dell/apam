@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
   items: any[] = [];
-  loginType!: string;
+  loginType: string = 'signup';
   emailId!: string;
   password!: string;
   cnfPassword!: string;

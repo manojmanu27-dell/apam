@@ -22,22 +22,24 @@
                     <div class="price">
                         <span>Price:</span>
                         <span class="strike-off">
-                            {{productObj.strikePrice}}
+                            ₹{{productObj.strikePrice}}
                         </span>
-                        {{productObj.discountedPrice}}
+                        <span class="discounted-percentage">₹{{productObj.discountPercentage}}OFF</span>
+                        ₹{{productObj.discountedPrice}}
                     </div>
                 </div>
             </div>
             <div class="d-md-none d-sm stciky">
                 <div class="row bottom-sticky">
                     <div class="wishlist col-6">
-                        <button mat-stroked-button class="move-to-wishlist">
-                            <img src="./assets/icons/wishlist-icon.svg" alt="Move To Wishlist">
-                            Wishlist</button>
+                        <button mat-raised-button class="move-to-wishlist">
+                            <i class="fa-regular fa-heart"></i>&nbsp;Wishlist
+                        </button>
                     </div>
                     <div class="bag-icon col-6">
-                        <button mat-raised-button color="primary" class="add-to-bag"><i class="fa-solid fa-bag-shopping pl-10"></i>Add to
-                            Bag</button>
+                        <button mat-raised-button color="primary" class="add-to-bag">
+                            <i class="fa-solid fa-bag-shopping pl-10"></i>&nbsp;Add to Bag
+                        </button>
                     </div>
                 </div>
 

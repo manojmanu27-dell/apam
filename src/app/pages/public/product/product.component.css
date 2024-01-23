@@ -69,6 +69,7 @@
 }
 
 .strike-off {
+    color: #D8D8D8;
     text-decoration: line-through;
 }
 
@@ -78,6 +79,8 @@
     margin: 0;
     bottom: 0;
     position: sticky;
+    margin-bottom: 5px;
+    background: white;
 }
 
 .add-to-bag,
@@ -97,4 +100,12 @@
 .stciky {
     bottom: 0;
     position: sticky;
+    background: white;
+    padding-top: 5px;
+    border-top: 1px solid #D8D8D8;
+}
+
+.discounted-percentage {
+    color: #d33030;
+    padding: 0 5px 0 5px;
 }

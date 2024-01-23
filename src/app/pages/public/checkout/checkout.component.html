@@ -155,47 +155,47 @@
                 <hr>
                 <div class="shipping-info">
                     <h2>Shipping Information</h2>
-                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
-                        <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Address</mat-label>
-                            <input matInput class="address" type="text" name="address" [(ngModel)]="doorNoOrStreetNo"
-                                required>
-                        </mat-form-field>
-                    </div>
-                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
-                        <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Colony/Street</mat-label>
-                            <input matInput class="colony" type="text" name="colony" [(ngModel)]="colonyOrStreet"
-                                required>
-                        </mat-form-field>
-                    </div>
-                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
-                        <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Landmark</mat-label>
-                            <input matInput class="landmark" type="text" name="nearByLocation" [(ngModel)]="landMark"
-                                required>
-                        </mat-form-field>
-                    </div>
-                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
-                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Pincode</mat-label>
-                            <input matInput class="pincode" type="text" name="Pincode" [(ngModel)]="pincode"
-                                required>
-                        </mat-form-field>
-                    </div>
-                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
-                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>city</mat-label>
-                            <input matInput class="city" type="text" name="City" [(ngModel)]="city"
-                                required>
-                        </mat-form-field>
-                    </div>
-                    <div class="input-box col-lg-6 col-md-6 col-sm-12">
-                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>State</mat-label>
-                            <input matInput class="state" type="text" name="State" [(ngModel)]="state"
-                                required>
-                        </mat-form-field>
+                    <div class="row">
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Address</mat-label>
+                                <input matInput class="address" type="text" name="address"
+                                    [(ngModel)]="doorNoOrStreetNo" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Colony/Street</mat-label>
+                                <input matInput class="colony" type="text" name="colony" [(ngModel)]="colonyOrStreet"
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Landmark</mat-label>
+                                <input matInput class="landmark" type="text" name="nearByLocation"
+                                    [(ngModel)]="landMark" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Pincode</mat-label>
+                                <input matInput class="pincode" type="text" name="Pincode" [(ngModel)]="pincode"
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>city</mat-label>
+                                <input matInput class="city" type="text" name="City" [(ngModel)]="city" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-box col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>State</mat-label>
+                                <input matInput class="state" type="text" name="State" [(ngModel)]="state" required>
+                            </mat-form-field>
+                        </div>
                     </div>
                 </div>
 
@@ -213,7 +213,13 @@
                 </div>
                 <mat-divider></mat-divider>
                 <div class="total-value content-corner">
-                    <h3> Total Amount</h3> <span>1000</span>
+                    <h3 class="heading-cart"> Total Amount:</h3> <span>1000</span>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="pay-for-desktop-view d-none d-md-block">
+                    <button mat-raised-button color="primary">Proceed to Pay
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
             <div class="col-12 d-md-none sticky-bottom p-0">
