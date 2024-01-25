@@ -1,7 +1,7 @@
 <div class="content-wrapper">
     <section class="content">
         <div class="row">
-            <div class="p-0 col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="row image-section">
                     <div class="product-image">
                         <img [src]="mainImage" [alt]="productObj.alt" class="image">
@@ -15,10 +15,10 @@
                 </div>
 
             </div>
-            <div class="p-0 col-lg-6 col-md-6 col-sm-12">
-                <div class="p-20">
-                    <h3 class="p-0 m-0">{{productObj.productName}}</h3>
-                    <h5 class="p-0 m-0">{{productObj.productType}} </h5>
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <div class="">
+                    <h3 class="m-0">{{productObj.productName}}</h3>
+                    <h5 class="m-0">{{productObj.productType}} </h5>
                     <div class="price">
                         <span>Price:</span>
                         <span class="strike-off">
@@ -27,8 +27,90 @@
                         <span class="discounted-percentage">₹{{productObj.discountPercentage}}OFF</span>
                         ₹{{productObj.discountedPrice}}
                     </div>
+                    <div class="select-size">
+                        <h5>Select Size:</h5>
+                        <button mat-mini-fab aria-label="Size XS" class="size-select">
+                            XS
+                        </button>
+                        <button mat-mini-fab aria-label="Size S" class="size-select">
+                            S
+                        </button>
+                        <button mat-mini-fab aria-label="Size M" class="size-select">
+                            M
+                        </button>
+                        <button mat-mini-fab aria-label="Size L" class="size-select">
+                            L
+                        </button>
+                        <button mat-mini-fab aria-label="Size XL" class="size-select">
+                            XL
+                        </button>
+                        <button mat-mini-fab aria-label="Size XXL" class="size-select">
+                            XXL
+                        </button>
+                    </div>
+                    <div class="select-quantity">
+                        <h5>Quantity</h5>
+                    </div>
+                    <div class="d-md-block d-none">
+                        <div class="d-flex desktop-view-btns">
+                            <button mat-raised-button class="move-to-wishlist">
+                                <i class="fa-regular fa-heart"></i>&nbsp;Wishlist
+                            </button>
+                            <button mat-raised-button color="primary" class="add-to-bag">
+                                <i class="fa-solid fa-bag-shopping pl-10"></i>&nbsp;Add to Bag
+                            </button>
+                        </div>
+                    </div>
                 </div>
+                <div class="product-info">
+                    <h5 class="heading">Product Description:</h5>
+                    <p class="sub-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil, voluptate placeat
+                        nesciunt natus ullam dolore eveniet dignissimos inventore, dolorum saepe impedit voluptatum
+                        repellendus. Cumque natus repellat voluptates dolorem minima.
+                    </p>
+                    <h5 class="heading">Type of Fit:</h5>
+                    <p class="sub-content">Slim Fit</p>
+                    <h5 class="heading">Material:</h5>
+                    <p class="sub-content">100% Original Cotton</p>
+                    <h5 class="heading">Wash Care:</h5>
+                    <p class="sub-content">Machine Wash</p>
+
+                </div>
+                <div class="size-info ">
+                    <mat-accordion>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class="red">*</span>Note: All Measurements are in Inches Only.
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                                <ng-container matColumnDef="brandSize">
+                                    <mat-header-cell *matHeaderCellDef> Brand Size </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.brandSize}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="size">
+                                    <mat-header-cell *matHeaderCellDef>Size </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.size}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="shoulder">
+                                    <mat-header-cell *matHeaderCellDef> Shoulder</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.shoulder}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="chest">
+                                    <mat-header-cell *matHeaderCellDef> Chest </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.chest}} </mat-cell>
+                                </ng-container>
+                                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                            </mat-table>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+
             </div>
+
             <div class="d-md-none d-sm stciky">
                 <div class="row bottom-sticky">
                     <div class="wishlist col-6">

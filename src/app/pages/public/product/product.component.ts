@@ -1,5 +1,7 @@
+import { MatNativeDateModule } from '@angular/material/core';
 import { SharedService } from './../../../services/shared.service';
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
   selector: 'app-product',
@@ -10,13 +12,17 @@ export class ProductComponent {
   productObj: any;
   imageList: any[] = [];
   mainImage: any;
+  sizeArr: any[] = [];
+  panelOpenState = false;
+  dataSource = new MatTableDataSource<any>;
+  displayedColumns: string[] = ['brandSize','size','shoulder','chest']
   constructor(private sharedService: SharedService) { }
   ngOnInit() {
     // this.productObj = this.sharedService.productObj;
     this.productObj = {
       "id": 254,
       "productName": "Casual M2ens shirt",
-      "productType":"Slim Fit Shirt with Design",
+      "productType": "Slim Fit Shirt with Design",
       "discountedPrice": 999,
       "strikePrice": 1999,
       "discountPercentage": 1000,
@@ -37,6 +43,39 @@ export class ProductComponent {
     }
 
     this.mainImage = this.productObj.image1;
+    this.dataSource.data = [
+      {
+        brandSize: 'XS',
+        size: '36',
+        shoulder: '16',
+        chest: '40'
+      }, {
+        brandSize: 'S',
+        size: '38',
+        shoulder: '17',
+        chest: '42'
+      }, {
+        brandSize: 'M',
+        size: '40',
+        shoulder: '18',
+        chest: '44'
+      }, {
+        brandSize: 'L',
+        size: '42',
+        shoulder: '19',
+        chest: '46'
+      }, {
+        brandSize: 'XL',
+        size: '44',
+        shoulder: '20',
+        chest: '49'
+      }, {
+        brandSize: 'XXL',
+        size: '46',
+        shoulder: '21',
+        chest: '52'
+      }
+    ]
   }
 
   changeMainImg(image: any) {

@@ -12,10 +12,6 @@
     display: flex;
 }
 
-.p-0 {
-    padding: 0;
-}
-
 .m-0 {
     margin: 0;
 }
@@ -65,7 +61,7 @@
 }
 
 .p-20 {
-    padding-left: 0;
+    padding: 0;
 }
 
 .strike-off {
@@ -108,4 +104,14 @@
 .discounted-percentage {
     color: #d33030;
     padding: 0 5px 0 5px;
+}
+
+.size-info .red {
+    color: #d33030;
+}
+
+.size-select{
+    color: black;
+    background: white;
+    margin: 0 9px;
 }
