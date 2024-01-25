@@ -15,7 +15,9 @@ export class ProductComponent {
   sizeArr: any[] = [];
   panelOpenState = false;
   dataSource = new MatTableDataSource<any>;
-  displayedColumns: string[] = ['brandSize','size','shoulder','chest']
+  displayedColumns: string[] = ['brandSize', 'size', 'shoulder', 'chest'];
+  selectedSize!: string;
+  quantity: number = 1;
   constructor(private sharedService: SharedService) { }
   ngOnInit() {
     // this.productObj = this.sharedService.productObj;
@@ -76,6 +78,16 @@ export class ProductComponent {
         chest: '52'
       }
     ]
+  }
+
+  modifyQuantity(type: string) {
+    if (type === 'add' && this.quantity < 10) {
+      this.quantity++;
+    }
+    if (type === 'sub' && this.quantity > 1) {
+      --this.quantity
+    }
+    console.log("the quantiy is", this.quantity)
   }
 
   changeMainImg(image: any) {

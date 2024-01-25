@@ -16,9 +16,9 @@
 
             </div>
             <div class="col-lg-5 col-md-5 col-sm-12">
-                <div class="">
-                    <h3 class="m-0">{{productObj.productName}}</h3>
-                    <h5 class="m-0">{{productObj.productType}} </h5>
+                <div class="product-spec-modify">
+                    <h3 class="mb-1">{{productObj.productName}}</h3>
+                    <h5 class="mb-1">{{productObj.productType}} </h5>
                     <div class="price">
                         <span>Price:</span>
                         <span class="strike-off">
@@ -29,27 +29,38 @@
                     </div>
                     <div class="select-size">
                         <h5>Select Size:</h5>
-                        <button mat-mini-fab aria-label="Size XS" class="size-select">
-                            XS
-                        </button>
-                        <button mat-mini-fab aria-label="Size S" class="size-select">
-                            S
-                        </button>
-                        <button mat-mini-fab aria-label="Size M" class="size-select">
-                            M
-                        </button>
-                        <button mat-mini-fab aria-label="Size L" class="size-select">
-                            L
-                        </button>
-                        <button mat-mini-fab aria-label="Size XL" class="size-select">
-                            XL
-                        </button>
-                        <button mat-mini-fab aria-label="Size XXL" class="size-select">
-                            XXL
-                        </button>
+                        <div class="select-btns">
+                            <button mat-mini-fab aria-label="Size XS" class="size-select"
+                                *ngFor="let obj of dataSource.data"
+                                [ngClass]="{'active':obj.brandSize === selectedSize}"
+                                (click)="selectedSize = obj.brandSize">
+                                {{obj.brandSize}}
+                            </button>
+                            <!-- <button mat-mini-fab aria-label="Size S" class="size-select">
+                                S
+                            </button>
+                            <button mat-mini-fab aria-label="Size M" class="size-select">
+                                M
+                            </button>
+                            <button mat-mini-fab aria-label="Size L" class="size-select">
+                                L
+                            </button>
+                            <button mat-mini-fab aria-label="Size XL" class="size-select">
+                                XL
+                            </button>
+                            <button mat-mini-fab aria-label="Size XXL" class="size-select">
+                                XXL
+                            </button> -->
+                        </div>
+
                     </div>
                     <div class="select-quantity">
                         <h5>Quantity</h5>
+                        <div class="qty-mod-btn">
+                            <button mat-raised-button class="increase-qty" (click)="modifyQuantity('add')">+</button>
+                            <input mat-input type="text" [value]="quantity" class="input-qty">
+                            <button mat-raised-button class="decrease-qty" (click)="modifyQuantity('sub')">-</button>
+                        </div>
                     </div>
                     <div class="d-md-block d-none">
                         <div class="d-flex desktop-view-btns">
@@ -77,12 +88,12 @@
                     <p class="sub-content">Machine Wash</p>
 
                 </div>
-                <div class="size-info ">
+                <div class="size-info mb-3">
                     <mat-accordion>
                         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
-                                    <span class="red">*</span>Note: All Measurements are in Inches Only.
+                                    <span class="red">*</span>Please Check the Size Chart below.
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
                             <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -108,9 +119,7 @@
                         </mat-expansion-panel>
                     </mat-accordion>
                 </div>
-
             </div>
-
             <div class="d-md-none d-sm stciky">
                 <div class="row bottom-sticky">
                     <div class="wishlist col-6">
