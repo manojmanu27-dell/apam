@@ -91,6 +91,14 @@
     opacity: 0 !important;
   }
 
+  .price-name .pirce-header{
+    display: none;
+  }
+
+  .product-column{
+    padding: 3px !important;
+  }
+
 }
 
 .price-name .discounted-percentage {

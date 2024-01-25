@@ -17,7 +17,7 @@
         </mat-checkbox>
       </div>
     </aside>
-    <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12">
+    <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12 p-0">
       <div class="container p-2">
         <div class="row shirts-view">
           <div class="heading col-12">
@@ -35,7 +35,7 @@
                   <h4 class="mb-1">{{product.productName}}</h4>
                 </div>
                 <div class="product-price">
-                  <h5 class="price-name">Price:
+                  <h5 class="price-name"> <span class="pirce-header">Price:</span>
                     <span class="strike-off" aria-disabled="true">
                       ₹{{product.strikePrice}}</span>
                     <span class="discounted-percentage">₹{{product.discountPercentage}}OFF</span>
