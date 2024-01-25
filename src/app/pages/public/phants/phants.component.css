@@ -2,7 +2,7 @@
   position: sticky;
   top: 68px;
   height: 100vh;
-  box-shadow: 0 16px 38px -12px rgba(0,0,0,.56), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
   overflow-y: auto;
 
 }
@@ -22,25 +22,32 @@
   background: #fff;
 }
 
-.card-body .defaultImage {
-  opacity: 1;
-  display: block;
-  transition: opacity 1s ease-in-out;
+.card-body {
+  position: relative;
 }
+
+/* .card-body .defaultImage {
+  opacity: 0;
+  display: block;
+  transition: opacity 2s ease-out;
+} */
 
 .card-body .hoverImage {
   opacity: 0;
-  display: none;
+  top:0;
+  left: 0;
+  position: absolute;
+  transition: opacity 0.8s ease-out;
+
 }
 
-.card:hover .card-body .defaultImage {
+/* .card:hover .card-body .defaultImage {
   opacity: 0;
   display: none;
-}
+} */
 
 .card:hover .card-body .hoverImage {
   opacity: 1;
-  display: block;
 }
 
 .buttons-for-mob-view {
@@ -77,5 +84,21 @@
 @media screen and (max-width:900px) {
   .buttons-for-mob-view {
     display: flex;
+  background: #fff;
+
   }
+  .card:hover .card-body .hoverImage {
+    opacity: 0 !important;
+  }
+  
+}
+
+.price-name .discounted-percentage {
+  color: #d33030;
+  padding: 0 5px 0 5px;
+}
+
+.price-name .strike-off {
+  color: #D8D8D8;
+  text-decoration: line-through;
 }

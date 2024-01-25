@@ -34,6 +34,14 @@
                 <div class="product-name">
                   <h4 class="mb-1">{{product.productName}}</h4>
                 </div>
+                <div class="product-price">
+                  <h5 class="price-name">Price:
+                    <span class="strike-off" aria-disabled="true">
+                      ₹{{product.strikePrice}}</span>
+                    <span class="discounted-percentage">₹{{product.discountPercentage}}OFF</span>
+                    <span class="discounted-price">₹{{product.discountedPrice}}</span>
+                  </h5>
+                </div>
                 <button mat-raised-button color="primary" class="bag-button" name="shirt{{i}}"
                   (click)="addToBagLocal(i)">
                   <i *ngIf="product.showNotch" class="fa-solid fa-circle-notch"></i>
@@ -49,30 +57,11 @@
     </div>
     <div class="buttons-for-mob-view col-12 ">
       <button class="btn btn-pad btn-sort col-6" (click)="openSortPopup()">
-        <svg width="30px" height="30px" viewBox="-2.16 -2.16 28.32 28.32" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="SVGRepo_iconCarrier">
-            <path d="M18 8L6 8M6 8L10.125 4M6 8L10.125 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round"></path>
-            <path opacity="0.5" d="M6 16L18 16M18 16L13.875 12M18 16L13.875 20" stroke="#1C274C" stroke-width="1.5"
-              stroke-linecap="round" stroke-linejoin="round"></path>
-          </g>
-        </svg>Sort</button>
+        <img src="./assets/icons/sort-icon.svg" alt="sort icon"> Sort
+      </button>
       <hr>
-      <button class="btn btn-pad col-6" (click)="openFilterPopup()"><svg width="30px" height="30px" viewBox="-4.08 -4.08 32.16 32.16" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="SVGRepo_iconCarrier">
-            <path opacity="0.4"
-              d="M8.16 6.6499H15.83C16.47 6.6499 16.99 7.1699 16.99 7.8099V9.0899C16.99 9.5599 16.7 10.1399 16.41 10.4299L13.91 12.6399C13.56 12.9299 13.33 13.5099 13.33 13.9799V16.4799C13.33 16.8299 13.1 17.2899 12.81 17.4699L12 17.9799C11.24 18.4499 10.2 17.9199 10.2 16.9899V13.9099C10.2 13.4999 9.97 12.9799 9.73 12.6899L7.52 10.3599C7.23 10.0799 7 9.5499 7 9.1999V7.8699C7 7.1699 7.52 6.6499 8.16 6.6499Z"
-              stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
-            </path>
-            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#292D32"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </g>
-        </svg>Filter</button>
+      <button class="btn btn-pad col-6" (click)="openFilterPopup()">
+        <img src="./assets/icons/filter-icon.svg" alt="sort icon"> Filter
+      </button>
     </div>
   </div>
