@@ -34,7 +34,7 @@
 
 .card-body .hoverImage {
   opacity: 0;
-  top:0;
+  top: 0;
   left: 0;
   position: absolute;
   transition: opacity 0.8s ease-out;
@@ -55,6 +55,7 @@
   bottom: 0;
   background: #fff;
   display: none;
+  z-index: 10;
 }
 
 .product-column {
@@ -84,13 +85,12 @@
 @media screen and (max-width:900px) {
   .buttons-for-mob-view {
     display: flex;
-  background: #fff;
-
   }
+
   .card:hover .card-body .hoverImage {
     opacity: 0 !important;
   }
-  
+
 }
 
 .price-name .discounted-percentage {
