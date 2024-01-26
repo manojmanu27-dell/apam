@@ -1,18 +1,26 @@
 <!-- Main Sidebar Container -->
-
 <aside class="sidebar" [ngClass]="{'collapse':sharedService.showSideBar}">
     <ul class="nav-list">
-        <li [ngClass]="{'active':router.url.includes('home')}">
-            <a href="javascript:void(0)" routerLink="/home"><span>Home</span></a>
+        <li [ngClass]="{'active':router.url.includes('home')}" routerLink="/home">
+            <!-- <a href="javascript:void(0)"><span>Home</span></a> -->
+            <button mat-raised-button class="btn-white w-100">Home</button>
+
         </li>
-        <li [ngClass]="{'active':router.url === '/shirts'}">
-            <a href="javascript:void(0)" routerLink="/shirts"><span>Shirts</span></a>
+        <li [ngClass]="{'active':router.url === '/shirts'}" routerLink="/shirts">
+            <!-- <a href="javascript:void(0)"><span>Shirts</span></a> -->
+            <button mat-raised-button class="btn-white w-100">Shirts</button>
+
         </li>
-        <li [ngClass]="{'active':router.url.includes('t-shirts')}">
-            <a href="javascript:void(0)" routerLink="/t-shirts"><span>T-Shirts</span></a>
+        <li [ngClass]="{'active':router.url.includes('t-shirts')}" routerLink="/t-shirts">
+            <button mat-raised-button class="btn-white w-100">T-Shirts</button>
+            <!-- <a href="javascript:void(0)"><span>T-Shirts</span></a> -->
         </li>
-        <li [ngClass]="{'active':router.url.includes('phants')}">
-            <a href="javascript:void(0)" routerLink="/phants"><span>Phants</span></a>
+        <!-- <li [ngClass]="{'active':router.url.includes('phants')}" routerLink="/phants">
+            <a href="javascript:void(0)"><span>Phants</span></a>
+        </li> -->
+        <li [ngClass]="{'active':router.url.includes('phants')}" routerLink="/phants">
+            <button mat-raised-button class="btn-white w-100">Phants</button>
         </li>
     </ul>
+
 </aside>

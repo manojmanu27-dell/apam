@@ -21,7 +21,11 @@ export class CheckoutComponent implements OnInit {
   pincode!: string;
   city!: string;
   state!: string;
-  showSendOtp:Boolean = true;
+  showSendOtp: Boolean = true;
+  totalPrice: number = 0;
+  discount: number = 0;
+  shippingCharges: number = 80;
+  subTotalPrice: number = 0;
   constructor(public sharedService: SharedService) {
   }
 
@@ -32,8 +36,14 @@ export class CheckoutComponent implements OnInit {
       this.items = this.items.map(obj => {
         let b = JSON.parse(obj)
         b['closeAnimationActive'] = false;
+        this.subTotalPrice += b.strikePrice;
+        this.discount += b.discountPercentage;
+        this.totalPrice += b.discountedPrice;
         return b;
       })
+    }
+    if(this.totalPrice>2000){
+      this.shippingCharges = 0;
     }
     console.log("The bag items are", this.items);
   }
@@ -47,8 +57,16 @@ export class CheckoutComponent implements OnInit {
       if (obj.id === id) {
         obj['closeAnimationActive'] = true;
       }
+      this.subTotalPrice += obj.strikePrice;
+      this.discount += obj.discountPercentage;
+      this.totalPrice += obj.discountedPrice;
       return obj
     })
+    if(this.totalPrice>2000){
+      this.shippingCharges = 0;
+    } else {
+      this.shippingCharges = 80;
+    }
     setTimeout(() => {
       this.sharedService.removeItem(id);
       this.items = Object.values(this.sharedService.bagItems)
@@ -60,7 +78,7 @@ export class CheckoutComponent implements OnInit {
 
   }
 
-  getOtp(){
+  getOtp() {
     this.showSendOtp = false;
   }
 

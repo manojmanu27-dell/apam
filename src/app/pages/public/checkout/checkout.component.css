@@ -134,9 +134,10 @@
 }
 
 .heading-cart {
-    padding: 0;
-    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.375;
     font-family: system-ui;
+
 }
 
 .select-type .create-acc {
@@ -161,8 +162,25 @@
     border-left: 1px solid #D8D8D8;
 }
 
-.pay-for-desktop-view{
+.pay-for-desktop-view {
     padding: 10px;
     justify-content: center;
     display: flex;
+}
+
+.btn-dark {
+    background: black !important;
+    color: white !important;
+}
+
+.btn-white,
+.btn-dark {
+    height: 50px;
+}
+
+.price-head,
+.final-price {
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 500;
 }

@@ -1,11 +1,12 @@
 .sidebar {
-    background: #D8D8D8;
-    width: 150px;
+    background: #f8f9fa;
+    width: 200px;
     z-index: 1021;
     position: absolute;
     height: 100%;
     top: 0;
     padding: 0;
+    border: 1px solid #dde0e5;
 }
 
 .nav-list {
@@ -19,42 +20,27 @@
 }
 
 .nav-list li {
-    padding: 10px;
-    border-radius: 100vw 0 0 100vw;
+    padding: 5px;
+    /* border-radius: 100vw 0 0 100vw; */
+    display: flex;
+    justify-content: center;
 }
 
-.nav-list li.active {
-    background: white;
+/* .nav-list li.active {
+    background: #ffff;
     color: black;
     position: relative;
+    animation: .2s ease;
+} */
+
+.nav-list li.active .btn-white {
+    background: #3f51b5;
+    color: white;
+    position: relative;
+    animation: .2s ease;
 }
 
 .nav-list a {
     text-decoration: none;
     color: black;
-}
-
-.nav-list .active::before {
-    top: calc(var(--border-radius)*-1);
-    border-radius: 0 0 100vw 0;
-    box-shadow: 5px 5px 0 5px white;
-
-
-}
-
-.nav-list .active::after {
-    bottom: calc(var(--border-radius)*-1);
-    border-radius: 0 100vw 0 0;
-    box-shadow: 10px -10px 0 10px white;
-}
-
-.nav-list .active::after,
-.nav-list .active::before {
-    --border-radius: 15px;
-    content: '';
-    position: absolute;
-    width: var(--border-radius);
-    height: var(--border-radius);
-    right: 0;
-    background: #D8D8D8;
 }
